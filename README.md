@@ -1,12 +1,48 @@
-# STRIDE · tienda de tenis
+<h1 align="center">👟 STRIDE · tienda de tenis</h1>
 
-Tienda académica de tenis con marca e imágenes originales. Frontend React/Vite en Vercel, API Flask en Docker/Render y PostgreSQL en Supabase. Incluye catálogo, filtros, carrito local y registro de pedidos de demostración. **No procesa pagos.**
+<p align="center">
+  Tienda académica de tenis con marca e imágenes originales.<br>
+  Catálogo, filtros, carrito local y pedidos de demostración. <strong>No procesa pagos.</strong>
+</p>
+
+<p align="center">
+  <a href="https://frontend-b5wt.vercel.app/">Ver demo</a> ·
+  <a href="#desarrollo-local">Desarrollo local</a> ·
+  <a href="#despliegue">Guía de despliegue</a> ·
+  <a href="https://github.com/tgiovanni277-ship-it/Devops_Actions/actions/workflows/ci.yml">Ver CI</a>
+</p>
+
+<p align="center">
+  <img alt="Python 3.12" src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white">
+  <img alt="Flask 3" src="https://img.shields.io/badge/Flask-3-000000?logo=flask&logoColor=white">
+  <img alt="React 19" src="https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white">
+  <img alt="Vite 6" src="https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white">
+  <img alt="PostgreSQL en Supabase" src="https://img.shields.io/badge/PostgreSQL-Supabase-4169E1?logo=postgresql&logoColor=white">
+  <img alt="Docker para la API" src="https://img.shields.io/badge/Docker-API-2496ED?logo=docker&logoColor=white">
+  <img alt="Render para la API" src="https://img.shields.io/badge/Render-API-000000?logo=render&logoColor=white">
+  <img alt="Vercel para el frontend" src="https://img.shields.io/badge/Vercel-Frontend-000000?logo=vercel&logoColor=white">
+</p>
+
+<p align="center">
+  <a href="https://github.com/tgiovanni277-ship-it/Devops_Actions/actions/workflows/ci.yml">
+    <img alt="Estado del workflow CI" src="https://github.com/tgiovanni277-ship-it/Devops_Actions/actions/workflows/ci.yml/badge.svg">
+  </a>
+</p>
+
+## Qué incluye
+
+- Catálogo de tenis con búsqueda, filtros y detalle de producto.
+- Carrito guardado en el navegador y registro de pedidos de demostración.
+- API que valida productos, tallas y stock; calcula el total y descuenta inventario.
+- Pruebas de API y builds de frontend y Docker en GitHub Actions.
+
+## Arquitectura
 
 ```text
-Navegador → React (Vercel) → API Flask (Render / Docker) → PostgreSQL (Supabase)
-                      │
-                      └── GitHub Actions valida Python, React y Docker en cada PR
+Navegador → React/Vite (Vercel) → API Flask (Render, Docker) → PostgreSQL (Supabase)
 ```
+
+GitHub Actions valida Python, React y Docker en cada pull request y al subir cambios a `main`.
 
 ## Estructura
 
@@ -114,4 +150,3 @@ Vercel y Render pueden desplegar cambios desde GitHub. Configura la protección 
 - **Serverless/Lambda:** tema conceptual del curso; la API implementada es un servicio web persistente.
 
 Las imágenes del proyecto fueron generadas para STRIDE y no usan logos de otras marcas.
-
