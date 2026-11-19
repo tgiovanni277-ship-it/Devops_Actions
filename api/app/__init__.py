@@ -22,6 +22,14 @@ def create_app(test_config=None):
     origins = [value.strip() for value in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",") if value.strip()]
     CORS(app, resources={r"/api/*": {"origins": origins}})
 
+    @app.get("/")
+    def index():
+        return jsonify(
+            service="STRIDE API",
+            status="ok",
+            endpoints={"health": "/health", "products": "/api/products"},
+        )
+
     @app.get("/health")
     def health():
         return jsonify(status="ok")
