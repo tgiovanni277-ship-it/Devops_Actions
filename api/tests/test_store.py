@@ -2,6 +2,12 @@ from app import db
 from app.models import Order, Product
 
 
+def test_root_shows_api_endpoints(client):
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json["service"] == "STRIDE API"
+    assert response.json["endpoints"]["products"] == "/api/products"
+
 def test_catalog_and_filter(client):
     response = client.get("/api/products?category=running")
     assert response.status_code == 200
